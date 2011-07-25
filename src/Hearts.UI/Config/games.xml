@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<games>
+  <game name="Game 1">
+    <player lib="Holstad"/>
+    <player lib="Hearts.BenFarmer"/>
+    <player lib="Hearts.Durzi"/>
+    <player lib="wildcard"/>
+  </game>
+  <game name="Game 2">
+    <player lib="Hearts.Core.MonkeyingAround"/>
+    <player lib="Hearts.Pwalke"/>
+    <player lib="Hearts.TripleBypass"/>
+    <player lib="NathanGudritzPlayer"/>
+  </game>
+  <game name="Game 3">
+    <player lib="Hearts.DanGardiner"/>
+    <player lib="Rrunk"/>
+    <player lib="SchuDrone5000"/>
+    <player lib="Hearts.Ryan"/>
+  </game>
+  <game name="Game 4">
+    <player lib="Bryan.HeartsPlayer"/>
+    <player lib="HeartAttack"/>
+    <player lib="Joy"/>
+    <player lib="Gilmer.Entry"/>
+  </game>
+  <game name="Game 5">
+    <player lib="Richie"/>
+    <player lib="Hearts.BenjaminZeinz"/>
+    <player lib="sgeraci"/>
+    <player lib="Hearts.Issleb"/>
+  </game>
+  <game name="Game 6">
+    <player lib="Hearts.Chaos"/>
+    <player lib="afroninja"/>
+    <player lib="Hearts.Tim"/>
+    <player lib="Hearts.Gfarr"/>
+  </game>
+  <game name="Game 7">
+    <player lib="Holstad"/>
+    <player lib="Hearts.Core.MonkeyingAround"/>
+    <player lib="Hearts.DanGardiner"/>
+    <player lib="Bryan.HeartsPlayer"/>
+  </game>
+  <game name="Game 8">
+    <player lib="Hearts.BenFarmer"/>
+    <player lib="Hearts.Pwalke"/>
+    <player lib="Rrunk"/>
+    <player lib="HeartAttack"/>
+  </game>
+  <game name="Game 9">
+    <player lib="Hearts.Durzi"/>
+    <player lib="Hearts.TripleBypass"/>
+    <player lib="sgeraci"/>
+    <player lib="Hearts.Chaos"/>
+  </game>
+  <game name="Game 10">
+    <player lib="wildcard"/>
+    <player lib="NathanGudritzPlayer"/>
+    <player lib="Hearts.Issleb"/>
+    <player lib="Hearts.Gfarr"/>
+  </game>
+  <game name="Game 11">
+    <player lib="SchuDrone5000"/>
+    <player lib="Joy"/>
+    <player lib="Richie"/>
+    <player lib="Hearts.Tim"/>
+  </game>
+  <game name="Game 12">
+    <player lib="Hearts.Ryan"/>
+    <player lib="Gilmer.Entry"/>
+    <player lib="Hearts.BenjaminZeinz"/>
+    <player lib="afroninja"/>
+  </game>
+  <game name="Game 13">
+    <player lib="Holstad"/>
+    <player lib="NathanGudritzPlayer"/>
+    <player lib="Joy"/>
+    <player lib="Hearts.Chaos"/>
+  </game>
+  <game name="Game 14">
+    <player lib="Hearts.BenFarmer"/>
+    <player lib="Hearts.TripleBypass"/>
+    <player lib="Gilmer.Entry"/>
+    <player lib="Hearts.Tim"/>
+  </game>
+  <game name="Game 15">
+    <player lib="Hearts.Durzi"/>
+    <player lib="Hearts.DanGardiner"/>
+    <player lib="HeartAttack"/>
+    <player lib="Hearts.Issleb"/>
+  </game>
+  <game name="Game 16">
+    <player lib="wildcard"/>
+    <player lib="Rrunk"/>
+    <player lib="Bryan.HeartsPlayer"/>
+    <player lib="Hearts.BenjaminZeinz"/>
+  </game>
+  <game name="Game 17">
+    <player lib="Hearts.Core.MonkeyingAround"/>
+    <player lib="SchuDrone5000"/>
+    <player lib="sgeraci"/>
+    <player lib="afroninja"/>
+  </game>
+  <game name="Game 18">
+    <player lib="Hearts.Pwalke"/>
+    <player lib="Hearts.Ryan"/>
+    <player lib="Richie"/>
+    <player lib="Hearts.Gfarr"/>
+  </game>
+</games>

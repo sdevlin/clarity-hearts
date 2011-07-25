@@ -1,0 +1,26 @@
+﻿to do:
+
+add some kind of testing for play validator
+add timeout to player calls
+revisit "outranks" family of extension methods
+build a wpf app
+remember to build your own player
+
+for jerry:
+	number tricks, deals
+
+animations:
+    GameStarted
+		back to deck
+    DealStarted
+    CardsDealt
+		out to hands
+    CardsPassed
+		into center, then between players
+    TrickStarted
+    TrickFinished
+		into center, out to winning player
+    DealFinished
+		back to deck
+    GameFinished
+	

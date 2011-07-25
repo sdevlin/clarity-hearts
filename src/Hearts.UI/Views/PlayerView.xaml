@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="UI.Views.PlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Height="150"
+          Width="300">
+        <Image Grid.RowSpan="2" 
+               Grid.ColumnSpan="2" 
+               Source="/resources/images/gameSpot.png"
+               Stretch="Fill"/>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" 
+                            Value="5"/>
+                </Style>
+            </Grid.Resources>
+            <Image Source="{Binding Avatar}"/>
+            <TextBlock Grid.RowSpan="2" 
+                       Grid.Column="1"
+                       Text="{Binding Name}"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource playerTitleTextStyle}"/>
+            <TextBlock Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Score}"
+                       Style="{StaticResource ScoreTextStyle}"/>
+            <ItemsControl x:Name="items" 
+                          x:FieldModifier="private"
+                          Grid.Row="1" 
+                          Grid.Column="1" 
+                          ItemsSource="{Binding PointsTaken}"
+                          RenderTransformOrigin="0.5 0.5">
+                <ItemsControl.RenderTransform>
+                    <ScaleTransform ScaleX="1"
+                                    ScaleY="1"/>
+                </ItemsControl.RenderTransform>
+                <ItemsControl.Triggers>
+                    <EventTrigger RoutedEvent="ItemsControl.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard Storyboard.TargetName="items">
+                                <ParallelTimeline 
+                                    RepeatBehavior="Forever"
+                                    Duration="0:0:1">
+                                    <DoubleAnimation
+                                        Duration="0:0:0.15"
+                                        To="1.02"
+                                        AutoReverse="True"
+                                        Storyboard.TargetProperty="RenderTransform.ScaleX"/>
+                                    <DoubleAnimation
+                                        Duration="0:0:0.15"
+                                        To="1.02"
+                                        AutoReverse="True"
+                                        Storyboard.TargetProperty="RenderTransform.ScaleY"/>
+                                    <DoubleAnimation
+                                        BeginTime="0:0:0.3"
+                                        Duration="0:0:0.15"
+                                        To="1.01"
+                                        AutoReverse="True"
+                                        Storyboard.TargetProperty="RenderTransform.ScaleX"/>
+                                    <DoubleAnimation
+                                        BeginTime="0:0:0.3"
+                                        Duration="0:0:0.15"
+                                        To="1.01"
+                                        AutoReverse="True"
+                                        Storyboard.TargetProperty="RenderTransform.ScaleY"/>
+                                </ParallelTimeline>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ItemsControl.Triggers>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image x:Name="heart" 
+                               Source="/resources/images/heartIcon.png" 
+                               Width="19" 
+                               Height="17" 
+                               Margin="3"
+                               RenderTransformOrigin="0.5 0.5">
+                            <Image.RenderTransform>
+                                <ScaleTransform ScaleX="0"
+                                                ScaleY="0"/>
+                            </Image.RenderTransform>
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard Storyboard.TargetName="heart" 
+                                                    BeginTime="0:0:2.2">
+                                            <DoubleAnimation
+                                                Duration="0:0:0.2"
+                                                To="1"
+                                                Storyboard.TargetProperty="RenderTransform.ScaleX"/>
+                                            <DoubleAnimation
+                                                Duration="0:0:0.2"
+                                                To="1"
+                                                Storyboard.TargetProperty="RenderTransform.ScaleY"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</UserControl>

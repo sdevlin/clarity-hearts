@@ -1,0 +1,21 @@
+﻿<v:ActiveView
+    x:Class="UI.Views.GameView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:UI.Views">
+    <Grid>
+        <Image Source="/resources/images/felt.jpeg"
+               Stretch="Fill"/>
+        <v:PlayerView VerticalAlignment="Top"
+                      DataContext="{Binding PlayerThree}"/>
+        <v:PlayerView HorizontalAlignment="Left"
+                      DataContext="{Binding PlayerTwo}"/>
+        <v:PlayerView HorizontalAlignment="Right"
+                      DataContext="{Binding PlayerFour}"/>
+        <v:PlayerView VerticalAlignment="Bottom"
+                      DataContext="{Binding PlayerOne}"/>
+        <Canvas x:Name="cardsView" 
+                x:FieldModifier="private"
+                ClipToBounds="True"/>
+    </Grid>
+</v:ActiveView>

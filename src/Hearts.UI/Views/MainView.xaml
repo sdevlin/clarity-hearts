@@ -1,0 +1,142 @@
+﻿<!-- uncomment this window when you're ready to rock -->
+<!--<Window x:Class="UI.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:UI.Commands"
+        xmlns:v="clr-namespace:UI.Views"
+        Title="{Binding Title}" 
+        WindowStyle="None"
+        WindowState="Maximized"
+        Height="1024" 
+        Width="1280">-->
+<!-- uncomment this window for dev -->
+<Window x:Class="UI.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:UI.Commands"
+        xmlns:v="clr-namespace:UI.Views"
+        Title="{Binding Title}" 
+        Height="1024" 
+        Width="1280">
+    <Window.Resources>
+        <c:CommandReference x:Key="exitCmd" 
+                            Command="{Binding ExitCommand}"/>
+        <c:CommandReference x:Key="pauseCmd" 
+                            Command="{Binding PauseCommand}"/>
+        <c:CommandReference x:Key="killCmd" 
+                            Command="{Binding KillCommand}"/>
+        <c:CommandReference x:Key="newCmd" 
+                            Command="{Binding NewCommand}"/>
+        <c:CommandReference x:Key="tourneyCmd" 
+                            Command="{Binding TourneyCommand}"/>
+        <c:CommandReference x:Key="batchCmd" 
+                            Command="{Binding BatchCommand}"/>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" 
+                    Command="{StaticResource exitCmd}"/>
+        <KeyBinding Key="Space" 
+                    Command="{StaticResource pauseCmd}"/>
+        <KeyBinding Key="N" 
+                    Modifiers="Control" 
+                    Command="{StaticResource newCmd}"/>
+        <KeyBinding Key="T" 
+                    Modifiers="Control" 
+                    Command="{StaticResource tourneyCmd}"/>
+        <KeyBinding Key="B" 
+                    Modifiers="Control" 
+                    Command="{StaticResource batchCmd}"/>
+        <KeyBinding Key="X" 
+                    Modifiers="Control" 
+                    Command="{StaticResource killCmd}"/>
+    </Window.InputBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Hearts">
+                <MenuItem Command="{Binding AboutCommand}" 
+                          Header="_About"/>
+                <Separator/>
+                <MenuItem Command="{Binding ExitCommand}" 
+                          Header="_Exit" 
+                          InputGestureText="Esc"/>
+            </MenuItem>
+            <MenuItem Header="_Game">
+                <MenuItem Command="{Binding NewCommand}" 
+                          Header="_New Game" 
+                          InputGestureText="Ctrl+N"/>
+                <MenuItem x:Name="load"
+                          x:FieldModifier="private"
+                          Header="_Load Game"
+                          ItemsSource="{Binding ConfigGames}">
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="{x:Type MenuItem}">
+                            <Setter Property="Header"
+                                    Value="{Binding Name}"/>
+                            <Setter 
+                                Property="Command"
+                                Value="{Binding 
+                                    Path=DataContext.LoadCommand, 
+                                    ElementName=load}"/>
+                            <Setter Property="CommandParameter"
+                                    Value="{Binding}"/>
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem Command="{Binding TourneyCommand}" 
+                          Header="_Tourney" 
+                          InputGestureText="Ctrl+T"/>
+                <MenuItem Command="{Binding BatchCommand}" 
+                          Header="_Batch Run" 
+                          InputGestureText="Ctrl+B"/>
+                <Separator/>
+                <MenuItem Header="Play To"
+                          ItemsSource="{Binding Scores}">
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="{x:Type MenuItem}">
+                            <Setter Property="Header"
+                                    Value="{Binding Value}"/>
+                            <Setter Property="IsCheckable"
+                                    Value="True"/>
+                            <Setter Property="IsChecked"
+                                    Value="{Binding IsSelected}"/>
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Command="{Binding PauseCommand}" 
+                          Header="_Pause/Resume" 
+                          InputGestureText="Space"/>
+                <MenuItem Command="{Binding KillCommand}" 
+                          Header="_Kill" 
+                          InputGestureText="Ctrl+X"/>
+            </MenuItem>
+            <MenuItem x:Name="players" 
+                      x:FieldModifier="private" 
+                      Header="_Players"
+                      ItemsSource="{Binding Players}">
+                <MenuItem.ItemContainerStyle>
+                    <Style TargetType="{x:Type MenuItem}">
+                        <Setter Property="Header"
+                                Value="{Binding Name}"/>
+                        <Setter Property="IsCheckable"
+                                Value="True"/>
+                        <Setter Property="IsChecked"
+                                Value="{Binding IsSelected}"/>
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1100"/>
+            </Grid.ColumnDefinitions>
+            <v:GameView Grid.ColumnSpan="2"
+                        DataContext="{Binding Game}"/>
+            <v:BatchView Grid.ColumnSpan="2"
+                         DataContext="{Binding Batch}"/>
+            <v:TourneyView Grid.ColumnSpan="2"
+                           DataContext="{Binding Tourney}"/>
+        </Grid>
+    </DockPanel>
+</Window>

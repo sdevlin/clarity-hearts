@@ -1,0 +1,70 @@
+﻿<Application 
+    x:Class="UI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:UI.Converters"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    Startup="OnStartup">
+    <Application.Resources>
+        <c:EnumToDescriptionConverter x:Key="enumToDesc"/>
+        <c:CardToPathConverter x:Key="cardToPath"/>
+
+        <!-- Font Names -->
+        <FontFamily x:Key="GothamBook">Assets/Fonts/#Gotham Book</FontFamily>
+        <FontFamily x:Key="GothamBold">Assets/Fonts/#Gotham Bold</FontFamily>
+        <FontFamily x:Key="Helvetica">Assets/Fonts/#Helvetica Neue LT Std</FontFamily>
+        <FontFamily x:Key="CardFont">Assets/Fonts/#Card Characters</FontFamily>
+
+        <!-- Font sizes -->
+        <!--14pt-->
+        <system:Double x:Key="FontSizeSmall">18.667</system:Double>
+        <!--15pt-->
+        <system:Double x:Key="FontSizeNormal">20</system:Double>
+        <!--17pt-->
+        <system:Double x:Key="FontSizeMedium">22.667</system:Double>
+        <!--19pt-->
+        <system:Double x:Key="FontSizeMediumLarge">25.333</system:Double>
+        <!--24pt-->
+        <system:Double x:Key="FontSizeLarge">32</system:Double>
+        <!--32pt-->
+        <system:Double x:Key="FontSizeExtraLarge">42.667</system:Double>
+        <!--54pt-->
+        <system:Double x:Key="FontSizeExtraExtraLarge">64</system:Double>
+
+        <!--Text Styles-->
+        <Style x:Key="defaultTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+            <Setter Property="Foreground" Value="#f8f8ff" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        </Style>
+
+        <Style x:Key="ScoreTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+            <Setter Property="Opacity" Value=".5" />
+            <Setter Property="Foreground" Value="#f8f8ff" />
+        </Style>
+
+        <Style x:Key="boldTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource GothamBold}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeExtraLarge}" />
+            <Setter Property="Foreground" Value="#f8f8ff" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        </Style>
+
+        <Style x:Key="playerTitleTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource Helvetica}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeNormal}" />
+            <Setter Property="Foreground" Value="#f8f8ff" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        </Style>
+
+        <Style x:Key="cardTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource CardFont}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+            <Setter Property="Foreground" Value="#f8f8ff" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,49 @@
+﻿mostly taken from here: http://www.pagat.com/reverse/hearts.html
+
+hearts is a four-player card game. there are no partners. play is trick-
+based.
+
+a standard deck of cards is used. ace is high and two is low. there is no 
+trump suit.
+
+the goal of the game is to avoid taking points. each heart is worth one 
+point. the queen of spades is worth 13 points.
+
+the game ends when a player has 100 or more points. the winner is the player 
+with the fewest points. as many deals/hands will be played as necessary.
+
+cards are dealt evenly between players, 13 apiece. after cards are dealt, 
+each player selects three cards to pass. on the first deal, players pass 
+cards to the left. on the second, to the right. on the third, across the 
+table. on the fourth deal, no cards are passed. this cycle rotates until 
+the game is complete. once cards are passed, setup for the deal is complete.
+
+the player holding the two of clubs leads the first trick. he must lead the 
+two of clubs. the remaining players follow in clockwise order. each player 
+must follow suit if possible. if a player has no cards in the suit led, he 
+may play any card. (an exception to this is the first trick, when no point 
+cards may be played.) the player who plays the highest card in the suit led 
+wins the trick and leads the next trick.
+
+hearts may no be led until a heart has been played to a previous trick. (an 
+exception to this is if a player's hand contains nothing but hearts.) 
+playing the first heart of the deal is called "breaking hearts." to 
+reiterate, hearts may not be led until hearts are broken. (n.b. spades may 
+be led at any time.)
+
+at the end of the deal, each player receives one point for each heart in 
+tricks he has won. the player who has won the queen of spades in a trick 
+receives 13 points.
+
+an exception to this occurs when one player takes every point card. this is 
+called "shooting the moon." when a player shoots the moon, he is 
+(traditionally) allowed one of two options: he may increment each opposing 
+player's score by 26 or decrement his own score by the same amount. note 
+that this choice has been factored out of this implementation for 
+simplicity. in this implementation, the opposing players' scores will always 
+be increased unless doing so will cause one of them to win the game. (i.e. 
+by causing one player's score to exceed 100 while another's is still lower 
+than that of the player shooting the moon.)
+
+if you notice any inconsistencies or underspecified points in these rules, 
+please contact me for clarification.
